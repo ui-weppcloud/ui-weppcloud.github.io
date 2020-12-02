@@ -63,6 +63,10 @@ A empirical Debris Flow model is available for the US. It is parameterized from 
 
 For the US an interface is available to run RHEM across a catchment. The covers are assigned from the NLCD Rangeland database.
 
+### Lake Tahoe-Fire
+
+This interface is for the Lake Tahoe Basin. Soil Burn Severity is estimated from a random forest classification model developed specifically for Lake Tahoe. This interface also incorporates phosphorus soil data.
+
 ## Help / Feedback
 
 For general assistance or questions please contact Mariana Dobre at mdobre@uidaho.edu. 
