@@ -14,6 +14,55 @@ User accounts can be created here:
 
 GPDR: We ask for your first and last name to provide polite coorespondances. Your email is used as a unique indentifier for your account. None of your personal identifiable information is shared with third-parties. 
 
+## Locales
+
+WEPPcloud relies on publically available databases to parameterize the necessary WEPP inputs. The various WEPPcloud interfaces are more-or-less supported in the following locales:
+
+- Conterminous United States
+- Europe
+- Australia
+
+WEPPcloud has region specific data for some locations that are used to provide better calibration. These regions include:
+
+- Lake Tahoe
+- Portland Municipal Watershed
+
+## Interfaces
+
+WEPPcloud is comprised of numerous interfaces with sometimes subtle distinctions between them. While this helps to provide backwards compatibility the result can be confusing to users. If you are unsure of what interface to use, use the general WEPPcloud Interface or the Disturbed Interface.
+
+### WEPPcloud
+
+Delineates and builds 7778 soils and managements with available data. The soils and landuse are parameterized directly from available datasets. 
+
+### Disturbed
+
+Backfills soils and managements with parameters from the USFS Disturbed database based on landcover type and soil texture.
+
+### WEPP-PEP (Post Fire Erosion Prediction)
+
+Assigns 2006 soils and managements based on soil texture (sand loam, silt loam, clay loam, loam), and burn severity (unburned, low/moderate, high).
+
+### RRED (Rapid Response Erosion Database) 
+
+Obtains soils and managements from the [http://rred.mtri.org/rred](RRED). These use 2006 soils and 97.3 managements.
+
+## Tools
+
+Specialized tools and reports are available on some interfaces to assist with post-fire risk assessment. These tools include:
+
+### WATAR (Water Erosion Prediction Project cloud model - Wildfire Ash Transport And  Risk estimation tool)
+
+WATAR has been under developed since 2017 (Neris et al. 2017). The model predicts the probability of both ash and soil, and the potential pollutants in them, to be transported from burned hillslopes into stream channels and waterbodies and utilizes WEPP outputs.
+
+### Debris Flow
+
+A empirical Debris Flow model is available for the US. It is parameterized from SSURGO and uses NOAA precipitation interval data.
+
+### RHEM (Rangeland Hydrology and Erosion Model)
+
+For the US an interface is available to run RHEM across a catchment. The covers are assigned from the NLCD Rangeland database.
+
 ## Help / Feedback
 
 For general assistance or questions please contact Mariana Dobre at mdobre@uidaho.edu. 
@@ -45,7 +94,7 @@ Watershed delineation can be performed by TOPAZ or TauDEM
 
 ##### TauDEM
 
-- TauDEM (Terrain Analysis Using Digital Elevation Models) is a suite of Digital Elevation Model (DEM) tools for the extraction and analysis of hydrologic information from topography as represented by a DEM.
+- [TauDEM](https://hydrology.usu.edu/taudem/taudem5/index.html) (Terrain Analysis Using Digital Elevation Models) is a suite of Digital Elevation Model (DEM) tools for the extraction and analysis of hydrologic information from topography as represented by a DEM.
 - TauDEM is similiar to TOPAZ but more modern in its implementation
 - TauDEM supports larger catchment areas and defines a binary channel network that eliminates more than 3 channels entering a single junction
 - A Python module (wepppy.taudem) provide TOPAZ emulation to delineate subcatchments within each of the TauDEM catchments and parameterize representative hillslopes from the D-Infinity TauDEM slope products
