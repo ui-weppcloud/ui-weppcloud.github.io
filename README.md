@@ -61,7 +61,7 @@ A empirical Debris Flow model is available for the US. It is parameterized from 
 
 ### RHEM (Rangeland Hydrology and Erosion Model)
 
-For the US an interface is available to run RHEM across a catchment. The covers are assigned from the NLCD Rangeland database.
+This interface provides a watershed scale online interface for RHEM. It parameterizes soils based on cover values obtained from the NLCD 2016 Shrubland database.
 
 ### Lake Tahoe-Fire
 
