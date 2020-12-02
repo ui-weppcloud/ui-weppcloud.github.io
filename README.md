@@ -7,12 +7,20 @@ The Water Erosion Prediction Project (WEPP) model is a hydrology and erosion mod
 WEPPcloud was mainly developed for forestry applications as a joint effort between University of Idaho and Forest Service Rocky Mountain Research Station. Other contributions to the applicaiton include USDA ARS, Swansea University, and Michigan Technological University.
 
 ## User Accounts
+WEPPcloud allows users to create and store model runs. Users can also create accounts to access "PowerUser" features or to find and collaborate on model runs with other users. By default, anonymous runs are always publicly available via the URL to the project. Be aware that any resources, such as soil burn severity maps, that are uploaded to the interface would be potentially publicly available. If logged in the created runs are private by default and are only available to the project owner and collaborators. Private runs can be made publicly available if collaborators wish to share them. It is suggested that the runs also be made "Read Only" to avoid having viewers accidentally alter the model results.
 
-WEPPcloud allows anonymous users to create and store model runs. Users can also create accounts to access "PowerUser" features or to find and collaborate on model runs with other users. By default, anonymous runs are always publicly available via the URL to the project. Be aware, that any resources, such as soil burn severity maps, that are uploaded to the interface would be publically available. If logged in the created runs are private by default and are only available to the project owner and collaborators. Private runs can be made publically available if collaborators wish to share them. It is suggested that the runs also be made "Read Only" to avoid having viewers accidentally alter the model results.
+User accounts can be created here:
+[https://wepp1.nkn.uidaho.edu/weppcloud/register](https://wepp1.nkn.uidaho.edu/weppcloud/register)
 
-### Contact
+GPDR: We ask for your first and last name to provide polite coorespondances. Your email is used as a unique indentifier for your account. None of your personal identifiable information is shared with third-parties. 
 
-For assistance or questions please contact Mariana Dobre at mdobre@uidaho.edu or Roger Lew at rogerlew@uidaho.edu.
+## Help / Feedback
+
+For general assistance or questions please contact Mariana Dobre at mdobre@uidaho.edu. 
+
+For technical assistance please contact Roger Lew at rogerlew@uidaho.edu. Providing the url to the run in question and a screenshot of the problem would also be helpful.
+
+For questions regarding the WEPP model please contact Anurag Srivastava at srivanu@idaho.edu.
 
 ## The WEPP Model
 
