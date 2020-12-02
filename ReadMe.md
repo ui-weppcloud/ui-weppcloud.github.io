@@ -67,6 +67,10 @@ This interface provides a watershed scale online interface for RHEM. It paramete
 
 This interface is for the Lake Tahoe Basin. Soil Burn Severity is estimated from a random forest classification model developed specifically for Lake Tahoe. This interface also incorporates phosphorus soil data.
 
+## Getting Started
+
+See the [QuickStart](QuickStart)
+
 ## Help / Feedback
 
 For general assistance or questions please contact Mariana Dobre at mdobre@uidaho.edu. 
