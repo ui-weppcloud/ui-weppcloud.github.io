@@ -10,9 +10,14 @@ https://ecat.ga.gov.au/geonetwork/srv/eng/catalog.search#/metadata/72759
 
 ## Landuse
 
-AU ABARES Landuse classes
+AU ABARES Landuse classes from Australia Dept. of Ag. 
 
 https://www.agriculture.gov.au/abares/aclump/land-use
+
+It is on a 1km grid. The classification is fairly in depth across a variety of attributes.
+http://data.daff.gov.au/data/warehouse/luav5g9abll20160704/luav5g9abll20160704a00ap_____16/NLUM_UserGuide_2010-11_v1.0.0.pdf
+
+To make things simple WEPPcloud is first looking at the forest type attribute, if that isn't defined it looks at the commodities attribute which categorizes based on agricultural use. If that also is not defined then the C18 class is used. 
 
 
 ## Soils
