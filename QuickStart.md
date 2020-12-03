@@ -235,11 +235,11 @@ TODO @roger_lew
 
 ### Download project
 
-#### Zip Archive (from interface)
+#### Zip Archive directly from interface
 
 Once the WEPP model runs are completed, the user can download all the input and output files as a zip archive, which contains several folders with all the maps and data used in the analysis. **This can be somewhat hit or miss with large projects. For large project consider using wget.**
 
-#### Wget
+#### Using wget
 
 Projects can be acquired using wget. [wepppy-win-bootstrap](https://github.com/rogerlew/wepppy-win-bootstrap) provides a script and instructions on downloading projects with wget.
 
@@ -274,3 +274,7 @@ Description of all the available files and folders:
 <dd>JSON serialized instances of wepppy.nodb classes used by WEPPcloud. These contain metadata related to the project. They are viewable in FireFox/Notepad++ etc.</dd>
 </dl>
 
+
+### Daily Water Balance Report 
+
+The ‘totalwatsed.csv’ file contains all the water balance components and sediment yield combined across the hillslopes in a watershed. The report also has daily streamflow and sediment yield at the outlet of the watershed that can be used to compare results against observed values. Users can open this file in excel and analyze the results as desired. The pivot table in excel can be used to summarize the results by calendar year or water year.
