@@ -119,5 +119,27 @@ WEPP is ran for each flowpath in the subcatchments. The plot files are used to p
 
 Daily simulated streamflow at the outlet of a watershed is composed of surface runoff, lateral flow (i.e. shallow subsurface stormflow) and baseflow. Baseflow is assumed to be routed to the stream outlet point from an aquifer network with a volumetric discharge following linear reservoir theory. The single aquifer is assumed to receive all water which vertically percolates below all upland hillslopes. It is assumed that the recharge to the aquifer is limited by the upslope drainage area defined by the surface topography and that there is no lateral groundwater exchange across watershed boundaries.  Following linear reservoir theory the baseflow from an aquifer (Qbase in mm/day) is calculated as a fixed percentage (k, the baseflow coefficient having units of 1/days) of the amount of water stored in the aquifer (S is total water volume in the aquifer in units of mm) using the following equation: 
 
-Q<sub>base</sub> = k * S</span>
+Q<sub>base</sub> = k * S
+
+The linear coefficient can be best estimated by slope of the ln (time) vs ln (flow) hydrograph during drought flow conditions.  The default parameter for the linear coefficient is k = 0.04 1/day.  
+
+In cases where the groundwater aquifer leaks water to either a deeper more regional aquifer or laterally across the watershed boundary or below the stream gage then users can optionally define a secondary aquifer loss (Qaq) based on second deep seepage linear coefficient (kds in 1/day units) based on the same storage amount S.  
+
+Q<sub>aq</sub> = k<sub>ds</sub> * S
+
+By default, the model assumes there is no other deep aquifer loss and therefore assumes Kds = 0. The amount of groundwater storage in the aquifer on any given day (i) is determined based on the follow equation.
+
+S<sub>i</sub> = S<sub>i-1</sub> - Q<sub>base,i</sub> – Q<sub>aq,i</sub>
+
+where S<sub>i-1</sub> is the groundwater storage volume from the previous day in the simulation.  The model assumes the initial amount of water storage in the aquifer on the first day of the simulation is 200 mm.
+
+Baseflow is simulated both at the watershed outlet and within the stream network if the upslope area above a point in the stream network is greater than user defined critical watershed area.  The default critical area is 1.0 ha.  This value should be assigned a larger magnitude in more arid locations.  
+
+### Pollutant Processing 
+
+This is an optional selection that allows users to estimate a pollutant based on known concentrations provided by the user. The estimates are simplistic and do not account for sorption, desorption, mineralization, or immobilization. They only provide rough estimates of the pollutant being transported by both water (via surface runoff, lateral flow, and baseflow) and sediments. 
+
+### FAO Penman-Monteith
+
+
 
