@@ -52,7 +52,7 @@ The watershed will delineate differently if the map extent, TOPAZ parameters, or
 
 ## Subcatchment Delineation
 
-Subcatchments whether delineated by TOPAZ or TauDEM will always have a TOPAZ Identifier as well as a WEPP Identifier. The TOPAZ identifiers (ids) are assigned in a clockwise fashion starting at the outlet. Left subcatchments always end in 1, right subcatchments end in 2, the source subcatchments end in 0, and the channels end in 4.
+Subcatchments whether delineated by TOPAZ or TauDEM will always have a TOPAZ Identifier as well as a WEPP Identifier. The TOPAZ identifiers (ids) are assigned in a clockwise fashion starting at the outlet. TOPAZ uses a numbering scheme where all the subcatchments end with "1," "2," or "3" and all the channels end with "4." Subcatchments to the right of a junction end with "2," and subcatchments to the left and with "3." Subcatchments that drain into a channel end with "1." Subcatchments and channels that are closer to the outlet typically have lower numbers.
 
 The WEPP structure file requires sequential numbering and hence the need for having both TOPAZ identifiers and WEPP identifiers.
 
