@@ -74,8 +74,12 @@ Two options are provided for management selection.
 
 ### Modifying landuses
 
-Some interfaces allow the user to apply treatments through the map at the top of the screen. First build the managements. Then, select the management modification tool and either select subcatchments to change on the map or enter TOPAZ IDs.
+Some interfaces allow the user to apply treatments through the map at the top of the screen. First build the managements. The landuse covers will be assigned from the management database. The cover values can be modified from the default values by clicking the gear icon. Below the selected landuse a dialog should appear to allow for setting groud cover, interill, and rill cover values. The values are saved when the selection is made.
 
+![Modifying landuse cover](https://user-images.githubusercontent.com/3652906/70350832-66bc7880-181c-11ea-9c4c-48747164a57f.png)
+
+The landuses can be viewed on the map by selecting the "Dominant Landcover" layer on the layer tab to the right of the map.
+![Viewing Landuses](https://user-images.githubusercontent.com/3652906/70351880-bdc34d00-181e-11ea-98d6-0adadd9e153d.png)
 
 ## Soils
 
@@ -91,10 +95,23 @@ Three options are provided for determining soils.
 <dd>Select a soil for the entire watershed from a local database.</dd>
 </dl>
 
+Most of the time WEPPcloud builds WEPP soil files (7778 format) parameterized from the USDA's SSURGO/STATSGO database (for US Locale; not with WEPP-PEP or RRED). After building a summary table is provided for reviewing the soils within the catchment. The soils file names are taken from the SSURGO/STATSGO MUKEYs.
+![Soil Building](https://user-images.githubusercontent.com/3652906/70351636-3970ca00-181e-11ea-99af-70b06c790c54.png)
 
 ## Climate
 
-The climate input processing relies heavily on CLIGEN. CLIGEN uses station parameter or (.par) files. The most extensive database for CLIGEN coverage is across the US but a GHCN based database has global coverage for Europe and Australia. CLIGEN is a stochastic weather generator but also supports generating daily timeseries climate files if daily minimum and maximum temperatures and daily precipitations are available. CLIGEN also has the ability to produce single storm climate files **Please note that the WEPP outputs for Single Storm Events are different from the Continuous outputs and not all of post wepp functionality including WATAR**
+The climate input processing relies heavily on CLIGEN. 
+
+WEPP uses CLIGEN climate files as input. CLIGEN is a climate generator capable of generating stochastic daily climates, single storm events, or observed climates from daily temperature minimum, maximum, and precipitation series. 
+
+CLIGEN uses station parameter or (.par) files. We use the NSERL CLIGEN database of weather stations with monthly parameters for US Locales and a GHCN based database has global coverage for Europe and Australia.  The first step in building a climate is to select a weather station as a basis for the climate files. The recommended method to select a climate station is to select the "Multi-Factor Ranking (Considers Distance, Elevation, and Climate)" radio button. Once selected, WEPPcloud evaluates 2400+ stations to find the best match based on distance, elevation, and monthly climate values from PRISM. After a few seconds the best match should appear in the selection dialog, and summary climate statistics should appear below the selected station.
+
+![Climate Station Selection](https://user-images.githubusercontent.com/3652906/70352648-7342d000-1820-11ea-8650-4189042ec4bd.png)
+
+The selection control lists the 10 best matching stations in descending order. After the station description in parenthesis is an ordinal ranking metric (lower is better) and the distance from the centroid of the catchment. The user can select any station in the list.
+
+![Station Selection](https://user-images.githubusercontent.com/3652906/70352793-cc126880-1820-11ea-9f4a-dacdf452dc4e.png)
+CLIGEN is a stochastic weather generator but also supports generating daily timeseries climate files if daily minimum and maximum temperatures and daily precipitations are available. CLIGEN also has the ability to produce single storm climate files **Please note that the WEPP outputs for Single Storm Events are different from the Continuous outputs and not all of post wepp functionality including WATAR**
 
 
 ### “Vanilla” CLIGEN (Stochastic weather generation). 
