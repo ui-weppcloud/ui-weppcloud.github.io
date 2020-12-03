@@ -365,9 +365,4 @@ This link will generate an input CSV file as a zip file. Download to your comput
 This link connects the user to the ERMiT and Disturbed WEPP Batch home page where you can download ERMiT or Disturbed WEPP Batch spreadsheets. Once downloaded, the user can import the CSV file by following directions in ERMIT Batch or Disturbed WEPP Batch spreadsheets.
 
 
-## WEPPcloud Utilities 
-
-### Combined Watershed Viewer URL Generator
-
-The combined watershed generator allows a user to visualize the runoff and sediment loads across multiple catchments. Users supply a list of project runids and a link for the Combined Watershed Generator is Produced.
 
