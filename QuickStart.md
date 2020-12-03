@@ -233,6 +233,13 @@ TODO @roger_lew
 ## Export Functionality
 
 
-## Download project as Zip Archive 
+## Download project
 
-Once the WEPP model runs are completed, the user can download all the input and output files as a zip archive, which contains several folders with all the maps and data used in the analysis.
+### Zip Archive (from interface)
+
+Once the WEPP model runs are completed, the user can download all the input and output files as a zip archive, which contains several folders with all the maps and data used in the analysis. **This can be somewhat hit or miss with large projects. For large project consider using wget.**
+
+### Wget
+
+Projects can be acquired using wget. [wepppy-win-bootstrap](https://github.com/rogerlew/wepppy-win-bootstrap) provides a script and instructions on downloading projects with wget.
+
