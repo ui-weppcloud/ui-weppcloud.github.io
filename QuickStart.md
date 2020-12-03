@@ -5,10 +5,32 @@
 
 Modern browsers including Firefox, Chrome, Safari, and Edge should work with WEPPcloud. For best results use a laptop/desktop sized display. Internet Explorer is not supported
 
+## Creating a Project
+WEPPcloud projects are also referred to as runs, as in _model runs_. To start a project click on the "Start WEPPcloud Run" button.
+![Start WEPPcloud Run](https://user-images.githubusercontent.com/3652906/68882533-30c82080-06c4-11ea-8274-9fd3dd7c03d0.png)
+
+This creates a new project folder on the server.
+
+### RunID and Interface Config
+
+The newly created project has a unique RunID, underlined in red. This RunID is unique for every project and can be used to return to the project as well as for debugging purposes. In the cloud a project folder is created with this RunID.
+
+A large array of functionality is provided by WEPPcloud through the use of interface configurations. Each interface has a configuration file ("config file") that can specify specific boundaries for the interface as well as specific datasets and processing for the interface. The config is specified after the RunID in the URL. In the image below it is underlined in blue. The "0" config is for the US (Most of the config names are more meaningful).
+
+![RunID and Interface Config](https://user-images.githubusercontent.com/3652906/68883157-4ee25080-06c5-11ea-9b69-66f314c5a7ed.png)
+
+## Selecting Map Extent
+
+The first step is to specify the boundary for the catchment you wish to model. The extent of the map is used as the boundary for modeling. The map has controls to zoom in and out. It is also possible to double click on the map to zoom in. The map can be panned by clicking and dragging. The extent can also be specified by holding down shift will drawing a box. This is especially helpful when zoomed out.
+
 
 ## Channel Delineation
 
-The extent of the map sets the boundary for obtaining DEM and other datasets. Move the map so it encompasses the catchment you wish to delineate.
+The channel delineation is limited in the size of catchment areas that can be delineated. The limit is dependent on the TOPAZ processing parameters for Minimum Channel Length (MCL) and Critical Subcatchment Area (CSA). For this reason, it is suggested that you zoom into a level of 13 or greater. 
+
+When setting the extent it is important that the ridgeline of the catchment you wish to model is within the boundary of the map. TOPAZ will fail if the catchment falls outside of the map when delineating subcatchments.
+
+![Map](https://user-images.githubusercontent.com/3652906/68883858-b77dfd00-06c6-11ea-8630-1c34b6da480a.png)
 
 
 ### TOPAZ
@@ -284,6 +306,12 @@ Description of all the available files and folders:
 <dt>*.nodb</dt>
 <dd>JSON serialized instances of wepppy.nodb classes used by WEPPcloud. These contain metadata related to the project. They are viewable in FireFox/Notepad++ etc.</dd>
 </dl>
+
+
+#### More on NoDB Files
+
+WEPPcloud project runs are designed to be self-contained and to not rely on a centralized database. This is accomplished by storing model run information in JSON (JavaScript Object Notation) files. These are the .nodb files in the project's root folder. The .nodb files are serialized Python class instances that greatly simplifies modeling from a programmatic perspective. Even for non-programmers these files can be informative. Loading the topaz.nodb shows the following:
+![topaz.nodb contents](https://user-images.githubusercontent.com/3652906/68886461-1b56f480-06cc-11ea-8291-d215764734c8.png)
 
 
 ### Daily Water Balance Report 
