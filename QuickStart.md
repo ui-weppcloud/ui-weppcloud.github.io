@@ -1,12 +1,15 @@
 # Quick Start Reference Guide
 
+
 ## Web Browser
 
 Modern browsers including Firefox, Chrome, Safari, and Edge should work with WEPPcloud. For best results use a laptop/desktop sized display. Internet Explorer is not supported
 
+
 ## Channel Delineation
 
 The extent of the map sets the boundary for obtaining DEM and other datasets. Move the map so it encompasses the catchment you wish to delineate.
+
 
 ### TOPAZ
 
@@ -19,15 +22,18 @@ WEPPCloud uses TOPAZ to parameterize topographic data from DEMs to create hillsl
 <dd>The minimum drainage area below which a permanent channel forms. The default value is set to 4 ha.</dd>
 </dl>
 
+
 ### Repeatable Delineation
 
 The watershed will delineate differently if the map extent, TOPAZ parameters, or outlet location are changed. To get the same watershed to delineate you can manually set the center location of the map and zoom level as well as specify the longitude and latitude of the outlet.
+
 
 ## Subcatchment Delineation
 
 Subcatchments whether delineated by TOPAZ or TauDEM will always have a TOPAZ Identifier as well as a WEPP Identifier. The TOPAZ identifiers (ids) are assigned in a clockwise fashion starting at the outlet. Left subcatchments always end in 1, right subcatchments end in 2, the source subcatchments end in 0, and the channels end in 4.
 
 The WEPP structure file requires sequential numbering and hence the need for having both TOPAZ identifiers and WEPP identifiers.
+
 
 ## Managements
 
@@ -43,9 +49,11 @@ Two options are provided for management selection.
 <dd>Manually select a management from the drop-down list.</dd>
 </dl>
 
+
 ### Modifying landuses
 
 Some interfaces allow the user to apply treatments through the map at the top of the screen. First build the managements. Then, select the management modification tool and either select subcatchments to change on the map or enter TOPAZ IDs.
+
 
 ## Soils
 
@@ -61,33 +69,41 @@ Three options are provided for determining soils.
 <dd>Select a soil for the entire watershed from a local database.</dd>
 </dl>
 
+
 ## Climate
 
 The climate input processing relies heavily on CLIGEN. CLIGEN uses station parameter or (.par) files. The most extensive database for CLIGEN coverage is across the US but a GHCN based database has global coverage for Europe and Australia. CLIGEN is a stochastic weather generator but also supports generating daily timeseries climate files if daily minimum and maximum temperatures and daily precipitations are available. CLIGEN also has the ability to produce single storm climate files **Please note that the WEPP outputs for Single Storm Events are different from the Continuous outputs and not all of post wepp functionality including WATAR**
+
 
 ### “Vanilla” CLIGEN (Stochastic weather generation). 
 
 The daily climate is generated using the CLIGEN (CLImate GENerator) and the nearest parameter (.PAR) file. Values in .PAR files includes monthly statistical values derived using the NCDC-NOAA weather stations from 1974 through 2013.
 
+
 ###	PRISM Modified 
 
 Monthly values of precipitation, maximum and minimum, wet/dry days in “Vanilla” CLIGEN .PAR file is replaced with PRISM normal covering the period 1981-2010
 
+
 ### Observed (DAYMET)
 
-Interpolated 1-km spatial resolution daily observed precipitation, maximum and minimum temperatures are obtained from the data source. This dataset is available from 1980-2016. Other required weather inputs in the climate files are generated using nearest CLIGEN station
+Interpolated 1-km spatial resolution daily observed precipitation, maximum and minimum temperatures are obtained from the data source. This dataset is available from 1980-2016. Other required weather inputs in the climate files are generated using nearest CLIGEN station.
+
 
 ###	Observed (DAYMET) with PRISM Revision 
 
-Interpolated 1-km spatial resolution daily observed precipitation, maximum and minimum temperatures are obtained from the data source. This dataset is available from 1980-present. Other required weather inputs in the climate files are generated using nearest CLIGEN station
+Interpolated 1-km spatial resolution daily observed precipitation, maximum and minimum temperatures are obtained from the data source. This dataset is available from 1980-present. Other required weather inputs in the climate files are generated using nearest CLIGEN station.
+
 
 ### Observed (GRIDMET) with PRISM Revision
 
 Interpolated 4-km spatial resolution daily observed precipitation, maximum and minimum temperatures are obtained from the data source. This dataset is available from 1980-present. Other required weather inputs in the climate files are generated using nearest CLIGEN station.
 
+
 ### Future (CMIP5) 
 
 Interpolated 4-km spatial resolution daily observed precipitation, maximum and minimum temperatures are obtained from the data source. This dataset is available from 2006-2099. Other required weather inputs in the climate files are generated using nearest CLIGEN station.
+
 
 ### Single Storm 
 
@@ -104,6 +120,7 @@ User-defined storm for event-wise simulation
 <dd>Enter the peak rainfall intensity of the storm in inches per hour or millimeters per hour.</dd>
 </dl>
 
+
 ## Watershed Preparation Report
 
 Watershed Preparation details describes hillslopes and channels associations with the aforementioned four inputs climate, management, soil, and slope. The table described here might also be useful for referencing variables/values in the output reports with subcatchment delineation map.  
@@ -111,9 +128,11 @@ Watershed Preparation details describes hillslopes and channels associations wit
 
 ## WEPP Advanced Options
 
+
 ### Flowpath Processing
 
 WEPP is ran for each flowpath in the subcatchments. The plot files are used to produce a gridded soil loss/deposition map. This is only available with the TOPAZ delineation backend.
+
 
 ### Baseflow Processing
 
@@ -135,11 +154,85 @@ where S<sub>i-1</sub> is the groundwater storage volume from the previous day in
 
 Baseflow is simulated both at the watershed outlet and within the stream network if the upslope area above a point in the stream network is greater than user defined critical watershed area.  The default critical area is 1.0 ha.  This value should be assigned a larger magnitude in more arid locations.  
 
+
 ### Pollutant Processing 
 
 This is an optional selection that allows users to estimate a pollutant based on known concentrations provided by the user. The estimates are simplistic and do not account for sorption, desorption, mineralization, or immobilization. They only provide rough estimates of the pollutant being transported by both water (via surface runoff, lateral flow, and baseflow) and sediments. 
 
+
 ### FAO Penman-Monteith
 
+FAO 56 Penman-Monteith method for reference and actual evapotranspiration (ET) developed by Allen et al. (1998) (Wu and Dun, 2004)  
 
 
+## Run WEPP
+
+Once the user selects all the soil, management, and climate options, all the necessary input files are automatically created for the user. At this stage the user can run the WEPP model, which will wake anywhere between a few seconds, for smaller watersheds and several minutes or even an hour, for larger watersheds. The status bar should indicate the hillslopes being ran. Once successfully completed, the summary bar will provide information of the number of hillslopes ran and elapsed time. If one or more input files are missing, the interface will error, alerting the user of the missing information. 
+
+
+## WEPP Results
+
+
+### Watershed Loss Summary
+
+The Watershed Loss Summary output frame provides average annual simulated hydrologic and sediment yield metrics in three accessible tables from the watershed outlet, each hillslope (i.e. subcatchment) in the watershed, and each stream channel in the watershed, respectively.  
+
+The watershed loss results at the outlet include both absolute mass and volume-based metrics as well as normalized mass and volume output per unit upslope watershed area including: 
+
+-	average annual precipitation 
+-	water discharge (streamflow from the watershed outlet) 
+-	total hillslope sediment loss 
+-	total channel sediment loss 
+-	sediment discharge at the watershed outlet (net sediment yield delivered to the watershed outlet) 
+-	an overall sediment deliver ratio defined as the total sediment loss from the hillslopes divided by the total sediment discharge at the watershed outlet  
+
+The _Average Annual Summary for Subcatchments_ table provides information on:
+
+-	hillslope id (both WEPP and Topaz based ID numbers) 
+- landuse ID number 
+-	soil MUKEY ID 
+-	hillslope length 
+-	hillslope area 
+-	runoff 
+-	soil loss (i.e. detachment or erosion rate mass/hillslope area) 
+-	sediment deposition 
+-	sediment yield (i.e. mass of sediment delivered to the outlet of the hillslope)
+
+The _Average Annual Summary for Channels_ table provides hydrologic and sediment transport metrics for each channel
+
+
+### Return Periods Report
+
+Understanding the variability and risk of soil erosion is critical for forest managements. This section reports return period assessment for precipitation depth, runoff, peak discharge, 10-min and 30-min peak intensity, and sediment yield using the Weibull plotting position method based on annual maximum series.
+
+
+### Sediment Delivery Report
+
+Provides information regarding the delivery of sediment at the outlet, from the channels, and from the hillslopes. This report also provides class particle size fractions.
+
+
+### Water Balance Report
+
+The Average Annual Report provides major water balance components of each hillslope:
+-	precipitation 
+-	ET (transpiration + evapotranspiration) 
+-	surface runoff 
+-	subsurface lateral flow 
+-	deep seepage
+
+
+### Daily Streamflow (Runoff + Subsurface Lateral Flow + Baseflow) Graph
+
+This figure shows the contribution of daily runoff, subsurface lateral flow, and baseflow to streamflow averaged over hillslopes in a watershed.
+
+
+### Observed Data Model Fit 
+
+TODO @roger_lew
+
+## Export Functionality
+
+
+## Download project as Zip Archive 
+
+Once the WEPP model runs are completed, the user can download all the input and output files as a zip archive, which contains several folders with all the maps and data used in the analysis.
