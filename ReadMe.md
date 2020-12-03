@@ -16,8 +16,8 @@ WEPPcloud was mainly developed for forestry applications as a joint effort betwe
 
 ## Advanced Topics and Troubleshooting
 
-- [Clearing Locks](AdvancedTopics#Clearing Locks)
-- [Combined Watershed Generator](AdvancedTopics#Clearing Locks)
+- [Clearing Locks](AdvancedTopics#Clearing-Locks)
+- [Combined Watershed Generator](AdvancedTopics#WEPPcloud-Utilities)
 - [wepppy-win-bootstrap](https://github.com/rogerlew/wepppy-win-bootstrap) for local runs
 - [wepppy](https://github.com/rogerlew/wepppy) the opensource project that powers WEPPcloud
 
