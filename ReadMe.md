@@ -58,7 +58,7 @@ Assigns 2006 soils and managements based on soil texture (sand loam, silt loam, 
 
 ### RRED (Rapid Response Erosion Database) 
 
-Obtains soils and managements from the [http://rred.mtri.org/rred](RRED). These use 2006 soils and 97.3 managements.
+Obtains soils and managements from the [http://rred.mtri.org/rred](http://rred.mtri.org/rred). These use 2006 soils and 97.3 managements.
 
 ## Tools
 
