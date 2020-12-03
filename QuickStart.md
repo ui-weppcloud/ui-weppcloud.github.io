@@ -120,5 +120,5 @@ WEPP is ran for each flowpath in the subcatchments. The plot files are used to p
 Daily simulated streamflow at the outlet of a watershed is composed of surface runoff, lateral flow (i.e. shallow subsurface stormflow) and baseflow. Baseflow is assumed to be routed to the stream outlet point from an aquifer network with a volumetric discharge following linear reservoir theory. The single aquifer is assumed to receive all water which vertically percolates below all upland hillslopes. It is assumed that the recharge to the aquifer is limited by the upslope drainage area defined by the surface topography and that there is no lateral groundwater exchange across watershed boundaries.  Following linear reservoir theory the baseflow from an aquifer (Qbase in mm/day) is calculated as a fixed percentage (k, the baseflow coefficient having units of 1/days) of the amount of water stored in the aquifer (S is total water volume in the aquifer in units of mm) using the following equation: 
 
 <table>
-<tr><td style='width=80%'><span style='font-family: Didot, serif;'>Q<sub>base</sub> = k * S</span></td><td style='width=20%'>Eq. 1</td></tr>
+<tr style='width=100%; border=None;'><td style='width=80%'><span style='font-family: Didot, serif;'>Q<sub>base</sub> = k * S</span></td><td style='width=20%'>Eq. 1</td></tr>
 </table>
