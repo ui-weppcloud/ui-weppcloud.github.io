@@ -233,13 +233,44 @@ TODO @roger_lew
 ## Export Functionality
 
 
-## Download project
+### Download project
 
-### Zip Archive (from interface)
+#### Zip Archive (from interface)
 
 Once the WEPP model runs are completed, the user can download all the input and output files as a zip archive, which contains several folders with all the maps and data used in the analysis. **This can be somewhat hit or miss with large projects. For large project consider using wget.**
 
-### Wget
+#### Wget
 
 Projects can be acquired using wget. [wepppy-win-bootstrap](https://github.com/rogerlew/wepppy-win-bootstrap) provides a script and instructions on downloading projects with wget.
+
+
+### Project Directory Structure
+
+Description of all the available files and folders:
+
+
+<dl>
+<dt>climate (dir)</dt>
+<dd>contains all the PAR files and .cli files for each hillslope and for watershed.</dd>
+<dt>dem (dir)</dt>
+<dd>contains the DEM map used in the analysis as well as a topaz sub directory with all the maps created during the watershed delineation.</dd>
+<dt>export (dir)</dt>
+<dd>channels and subcatchments files in ArcGIS format containing topographic characteristics (such as slope, aspect, or length), input data (soil and management), and output information (runoff, lateral flow, baseflow, sediment, pollutant, etc.). The file also contains the several GeoTIFF maps used in the model run.</dd>
+<dt>landuse (dir)</dt>
+<dd>contains landuse map (e.g. ascii map with the 2016 National Land Cover Database (NLCD) for US Locale. The NLCD codes are translated into WEPP-equivalent managements based the mapping for the configuration.) </dd>
+<dt>observed (dir)</dt>
+<dd>files containing the observed data (if) provided by the user</dd>
+<dt>watershed (dir)</dt>
+<dd>files containing slope information for each channel and hillslope</dd>
+<dt>wepp/flowpaths (dir)</dt>
+<dd>if the flowpath option is selected, the WEPP model will be run for each map pixel. This folder contains a runs folder with all the input data and an output folder with the runoff and soil loss for each flowpath</dd>
+<dt>wepp/output (dir)</dt>
+<dd>contains all the WEPP model output files </dd>
+<dt>wepp/plots (dir)</dt>
+<dd>maps of gridded soil loss when flowpaths are ran</dd>
+<dt>wepp/runs (dir)</dt>
+<dd>folder containing all the WEPP model input files</dd>
+<dt>*.nodb</dt>
+<dd>JSON serialized instances of wepppy.nodb classes used by WEPPcloud. These contain metadata related to the project. They are viewable in FireFox/Notepad++ etc.</dd>
+</dl>
 
