@@ -333,4 +333,27 @@ WEPPcloud project runs are designed to be self-contained and to not rely on a ce
 
 ### Daily Water Balance Report 
 
-The ‘totalwatsed.csv’ file contains all the water balance components and sediment yield combined across the hillslopes in a watershed. The report also has daily streamflow and sediment yield at the outlet of the watershed that can be used to compare results against observed values. Users can open this file in excel and analyze the results as desired. The pivot table in excel can be used to summarize the results by calendar year or water year.
+The ['totalwatsed.csv'](https://wepp1.nkn.uidaho.edu/weppcloud/runs/lt_Watershed_10_CurCond.2020.cl532.ki5krcs.chn_cs25/lt/resources/wepp/totalwatsed.csv) file contains all the water balance components and sediment yield combined across the hillslopes in a watershed. The report also has daily streamflow and sediment yield at the outlet of the watershed that can be used to compare results against observed values. Users can open this file in excel and analyze the results as desired. The pivot table in excel can be used to summarize the results by calendar year or water year.
+
+### Arcmap Resources
+Quick link to the output results in ESRI's proprietary shapefile. These model outputs are similar to the ones from the export folder from the [Zip Archive](https://wepp1.nkn.uidaho.edu/weppcloud/runs/lt_Watershed_10_CurCond.2020.cl532.ki5krcs.chn_cs25/lt/export/arcmap/).
+
+### ERMiT 
+
+The ERMiToutput files allow users to directly input hillslope parameters directly into Erosion Risk Management Tool (ERMiT) Batch or Disturbed WEPP Batch spreadsheets for further analysis. ERMiT and ERMiT Batch are provided to allow users to compare various post-fire erosion control treatments in a probabilistic output. The ERMiT Batch allows users to examine all of the hillslopes in a watershed at once with various output options to determine which hillslopes have the probability of the highest (or lowest) erosion rates, how erosion mitigation treatments (i.e. mulching, seeding, etc.) will affect the hillslope erosion rates and how will recovery time effect erosion rates for up to 5 years post-fire. Disturbed WEPP and Disturbed WEPP Batch allows for analyzing various forest conditions and management options on hillslope erosion and provide probability of erosion in the first year after disturbance.
+
+#### Download Hillslope Input CSV for ERMiT Batch and Disturbed WEPP Batch 
+
+This link will generate an input CSV file as a zip file. Download to your computer and extract the two files. The first is a Excel spreadsheet CSV file that is the input to ERMiT Batch or Disturbed WEPP. The second is metadata file providing the user with information on WEPPcloud run date, number of hillslopes, watershed outlet, climate station selected and description of all the columns in the CSV file.
+
+#### Download the ERMiT Batch and Disturbed WEPP Batch Processing Spreadsheets
+
+This link connects the user to the ERMiT and Disturbed WEPP Batch home page where you can download ERMiT or Disturbed WEPP Batch spreadsheets. Once downloaded, the user can import the CSV file by following directions in ERMIT Batch or Disturbed WEPP Batch spreadsheets.
+
+
+## WEPPcloud Utilities 
+
+### Combined Watershed Viewer URL Generator
+
+The combined watershed generator allows a user to visualize the runoff and sediment loads across multiple catchments. Users supply a list of project runids and a link for the Combined Watershed Generator is Produced.
+
