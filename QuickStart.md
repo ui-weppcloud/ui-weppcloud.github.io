@@ -5,11 +5,24 @@
 
 Modern browsers including Firefox, Chrome, Safari, and Edge should work with WEPPcloud. For best results use a laptop/desktop sized display. Internet Explorer is not supported
 
+
+## User Accounts (Optional)
+
+WEPPcloud allows users to create and store model runs. Users can also create accounts to access "PowerUser" features or to find and collaborate on model runs with other users. By default, anonymous runs are always publicly available via the URL to the project. Be aware that any resources, such as soil burn severity maps, that are uploaded to the interface would be potentially publicly available. If logged in the created runs are private by default and are only available to the project owner and collaborators. Private runs can be made publicly available if collaborators wish to share them. It is suggested that the runs also be made "Read Only" to avoid having viewers accidentally alter the model results.
+
+User accounts can be created here:
+[https://wepp1.nkn.uidaho.edu/weppcloud/register](https://wepp1.nkn.uidaho.edu/weppcloud/register)
+
+GPDR: We ask for your first and last name to provide polite coorespondances. Your email is used as a unique indentifier for your account. None of your personal identifiable information is shared with third-parties. 
+
+
 ## Creating a Project
+
 WEPPcloud projects are also referred to as runs, as in _model runs_. To start a project click on the "Start WEPPcloud Run" button.
 ![Start WEPPcloud Run](https://user-images.githubusercontent.com/3652906/68882533-30c82080-06c4-11ea-8274-9fd3dd7c03d0.png)
 
 This creates a new project folder on the server.
+
 
 ### RunID and Interface Config
 
@@ -18,6 +31,7 @@ The newly created project has a unique RunID, underlined in red. This RunID is u
 A large array of functionality is provided by WEPPcloud through the use of interface configurations. Each interface has a configuration file ("config file") that can specify specific boundaries for the interface as well as specific datasets and processing for the interface. The config is specified after the RunID in the URL. In the image below it is underlined in blue. The "0" config is for the US (Most of the config names are more meaningful).
 
 ![RunID and Interface Config](https://user-images.githubusercontent.com/3652906/68883157-4ee25080-06c5-11ea-9b69-66f314c5a7ed.png)
+
 
 ## Selecting Map Extent
 
