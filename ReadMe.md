@@ -7,6 +7,8 @@ The Water Erosion Prediction Project (WEPP) model is a hydrology and erosion mod
 
 WEPPcloud was mainly developed for forestry applications as a joint effort between University of Idaho and Forest Service Rocky Mountain Research Station. Other contributions to the applicaiton include USDA ARS, Swansea University, and Michigan Technological University.
 
+**Looking for more information?** View the [FAQ](FAQ)
+
 ## User Accounts
 WEPPcloud allows users to create and store model runs. Users can also create accounts to access "PowerUser" features or to find and collaborate on model runs with other users. By default, anonymous runs are always publicly available via the URL to the project. Be aware that any resources, such as soil burn severity maps, that are uploaded to the interface would be potentially publicly available. If logged in the created runs are private by default and are only available to the project owner and collaborators. Private runs can be made publicly available if collaborators wish to share them. It is suggested that the runs also be made "Read Only" to avoid having viewers accidentally alter the model results.
 
@@ -19,7 +21,7 @@ GPDR: We ask for your first and last name to provide polite coorespondances. You
 
 WEPPcloud relies on publically available databases to parameterize the necessary WEPP inputs. The various WEPPcloud interfaces are more-or-less supported in the following locales:
 
-- Conterminous United States
+- [Conterminous United States](us-data)
 - Europe
 - Australia
 
