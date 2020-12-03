@@ -1,5 +1,3 @@
-# WEPPcloud
-
 ## About
 The Water Erosion Prediction Project (WEPP) model is a hydrology and erosion model wildly used by academics and land managers to assess the effects of land management changes on runoff and sediment yield. Even for advanced users, data preparation is a lengthy process that involves downloading various maps and datasets, and processing and saving the data in formats that are readable by the model. 
 
