@@ -57,8 +57,53 @@ Three options are provided for determining soils.
 <dd>Automatically creates a soil file for each hillslope from the available soil database. (For WEPP-PEP only soil texture is used to identify the correct soil from the WEPP-PEP soil database.)</dd>
 <dt>Single Soil for watershed (MUKEY)</dt>
 <dd>Assign one soil for the entire watershed based on the SSURGO/STATSGO MUKEY.</dd>
-<dt>o	Single Soil for Watershed (Database)</dt>
+<dt>Single Soil for Watershed (Database)</dt>
 <dd>Select a soil for the entire watershed from a local database.</dd>
 </dl>
 
 ## Climate
+
+The climate input processing relies heavily on CLIGEN. CLIGEN uses station parameter or (.par) files. The most extensive database for CLIGEN coverage is across the US but a GHCN based database has global coverage for Europe and Australia. CLIGEN is a stochastic weather generator but also supports generating daily timeseries climate files if daily minimum and maximum temperatures and daily precipitations are available. CLIGEN also has the ability to produce single storm climate files **Please note that the WEPP outputs for Single Storm Events are different from the Continuous outputs and not all of post wepp functionality including WATAR**
+
+### “Vanilla” CLIGEN (Stochastic weather generation). 
+
+The daily climate is generated using the CLIGEN (CLImate GENerator) and the nearest parameter (.PAR) file. Values in .PAR files includes monthly statistical values derived using the NCDC-NOAA weather stations from 1974 through 2013.
+
+###	PRISM Modified 
+
+Monthly values of precipitation, maximum and minimum, wet/dry days in “Vanilla” CLIGEN .PAR file is replaced with PRISM normal covering the period 1981-2010
+
+### Observed (DAYMET)
+
+Interpolated 1-km spatial resolution daily observed precipitation, maximum and minimum temperatures are obtained from the data source. This dataset is available from 1980-2016. Other required weather inputs in the climate files are generated using nearest CLIGEN station
+
+###	Observed (DAYMET) with PRISM Revision 
+
+Interpolated 1-km spatial resolution daily observed precipitation, maximum and minimum temperatures are obtained from the data source. This dataset is available from 1980-present. Other required weather inputs in the climate files are generated using nearest CLIGEN station
+
+### Observed (GRIDMET) with PRISM Revision
+
+Interpolated 4-km spatial resolution daily observed precipitation, maximum and minimum temperatures are obtained from the data source. This dataset is available from 1980-present. Other required weather inputs in the climate files are generated using nearest CLIGEN station.
+
+### Future (CMIP5) 
+
+Interpolated 4-km spatial resolution daily observed precipitation, maximum and minimum temperatures are obtained from the data source. This dataset is available from 2006-2099. Other required weather inputs in the climate files are generated using nearest CLIGEN station.
+
+### Single Storm 
+
+User-defined storm for event-wise simulation
+
+<dl>
+<dt>Storm Amount</dt>
+<dd>Enter the precipitation depth in inches or in millimeters.</dd>
+<dt>Storm Duration</dt>
+<dd>Enter the duration of the storm (in hours).</dd>
+<dt>% Duration to Peak Intensity</dt>
+<dd>Enter the time (in percent of the storm duration value) at which the peak intensity of the storm occurs. Note that this is not a time value, but a percentage of the total duration value which was entered in the previous field. For instance, if the peak intensity occurs at hour 4 of a 10-hour storm, then you would enter 40 (%) or 0.4 here.</dd>
+<dt>Max Intensity</dt>
+<dd>Enter the peak rainfall intensity of the storm in inches per hour or millimeters per hour.</dd>
+</dl>
+
+## Watershed Preparation Report
+
+Watershed Preparation details describes hillslopes and channels associations with the aforementioned four inputs climate, management, soil, and slope. The table described here might also be useful for referencing variables/values in the output reports with subcatchment delineation map.  
