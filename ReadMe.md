@@ -31,9 +31,9 @@ For questions regarding the WEPP model please contact Anurag Srivastava at sriva
 
 WEPPcloud relies on publically available databases to parameterize the necessary WEPP inputs. The various WEPPcloud interfaces are more-or-less supported in the following locales:
 
-- [Conterminous United States](us-data)
-- [Europe](eu-data)
-- [Australia](au-data)
+- [Conterminous United States](us-data.md)
+- [Europe](eu-data.md)
+- [Australia](au-data.md)
 
 WEPPcloud has region specific data for some locations that are used to provide better calibration. These regions include:
 
