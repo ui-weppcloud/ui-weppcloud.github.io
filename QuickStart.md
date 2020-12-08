@@ -110,6 +110,7 @@ Three options are provided for determining soils.
 </dl>
 
 Most of the time WEPPcloud builds WEPP soil files (7778 format) parameterized from the USDA's SSURGO/STATSGO database (for US Locale; not with WEPP-PEP or RRED). After building a summary table is provided for reviewing the soils within the catchment. The soils file names are taken from the SSURGO/STATSGO MUKEYs.
+
 ![Soil Building](https://user-images.githubusercontent.com/3652906/70351636-3970ca00-181e-11ea-99af-70b06c790c54.png)
 
 ## Climate
