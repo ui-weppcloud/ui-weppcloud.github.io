@@ -1,11 +1,11 @@
-## About
+## **About**
 The Water Erosion Prediction Project (WEPP) model is a hydrology and erosion model wildly used by academics and land managers to assess the effects of land management changes on runoff and sediment yield. Even for advanced users, data preparation is a lengthy process that involves downloading various maps and datasets, and processing and saving the data in formats that are readable by the model. 
 
 [WEPPcloud](https://wepp1.nkn.uidaho.edu/weppcloud) is an online interface for the WEPP model that facilitates input data preparation and hydrologic simulations from any computer connected to the internet. The user can zoom to a location, identify an area of interest, and delineate a watershed. Then based on a series of options that involve selection of soils, managements, and weather information from national or locally-stored databases, the user can quickly get estimates of runoff and soil erosion for their watershed of interest. Results are displayed in the web browser as text files and as geospatial maps and are also downloadable. Most hydrologic simulations can be completed within a few minutes, depending on the size of the watershed. 
 
 WEPPcloud was mainly developed for forestry applications as a joint effort between University of Idaho and Forest Service Rocky Mountain Research Station. Other contributions to the applicaiton include USDA ARS, Swansea University, and Michigan Technological University.
 
-**Looking for more information?** View the [FAQ](FAQ)
+**Looking for more information?** View the [FAQ.md](FAQ)
 
 ## Getting Started
 
@@ -15,7 +15,7 @@ WEPPcloud was mainly developed for forestry applications as a joint effort betwe
 ## Advanced Topics and Troubleshooting
 
 - [Clearing Locks](AdvancedTopics.md#Clearing-Locks)
-- [Combined Watershed Generator](AdvancedTopics#WEPPcloud-Utilities)
+- [Combined Watershed Generator](AdvancedTopics.md#WEPPcloud-Utilities)
 - [wepppy-win-bootstrap](https://github.com/rogerlew/wepppy-win-bootstrap) for local runs
 - [wepppy](https://github.com/rogerlew/wepppy) the opensource project that powers WEPPcloud
 
