@@ -9,7 +9,7 @@ WEPPcloud was mainly developed for forestry applications as a joint effort betwe
 
 ## Getting Started
 
-- [QuickStart](QuickStart)
+- [QuickStart](QuickStart.md)
 
 
 ## Advanced Topics and Troubleshooting
