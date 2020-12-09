@@ -5,7 +5,7 @@ The Water Erosion Prediction Project (WEPP) model is a hydrology and erosion mod
 
 WEPPcloud was mainly developed for forestry applications as a joint effort between University of Idaho and Forest Service Rocky Mountain Research Station. Other contributions to the applicaiton include USDA ARS, Swansea University, and Michigan Technological University.
 
-**Looking for more information?** View the [FAQ.md](FAQ)
+**Looking for more information?** View the [FAQ](FAQ.md)
 
 ## Getting Started
 
@@ -274,5 +274,5 @@ control whether pmet, frost, baseflow, and tcr WEPP sub-routines are ran.</td></
 
 # References
 
-see [References](References)
+see [References](References.md)
 
