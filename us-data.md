@@ -14,6 +14,9 @@ https://www.usgs.gov/core-science-systems/national-geospatial-program/national-m
 
 https://www.nrcs.usda.gov/wps/portal/nrcs/detail/soils/survey/?cid=nrcs142p2_053627
 
+[SSURGO_Metadata_-_Table_Column_Descriptions.pdf](https://github.com/rogerlew/wepppy/files/3741446/SSURGO_Metadata_-_Table_Column_Descriptions.pdf)
+[SSURGO_Metadata_-_Tables_and_Columns.pdf](https://github.com/rogerlew/wepppy/files/3741447/SSURGO_Metadata_-_Tables_and_Columns.pdf)
+
 ### Disturbed WEPP Soils
 
 ### Rapid Response Erosion Database (RRED)
