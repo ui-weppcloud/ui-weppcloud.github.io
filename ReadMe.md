@@ -178,6 +178,7 @@ WEPPcloud is a Python Flask web interface for running WEPP (and other hydrologic
   <tr><th>Date</th><th>Notable Change</th></tr>
 </thead>
 <tbody>
+<tr><td>February 10, 2021</td><td>Correct bulk density in ssurgo/statsgo soils based on rock content.</td></tr>
 <tr><td>December 8, 2020</td><td>TauDEM alpha release. Ash Transport gridded alpha release. Fractional zoom for map. Disturbed has ability to remove SBS. Channel shape export has discharge in m^3. Some other miscellaneous changes.</td></tr>
 <tr><td>Noveber 19, 2020</td><td>Tillage and surface effects removed from Tahoe/Disturbed WEPP files.</td></tr>
 <tr><td>November 18, 2020</td><td>All channel managements set to a default management specific for channels instead
