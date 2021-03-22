@@ -55,7 +55,10 @@ This interface also incorporates the Wildfire Ash Transport And Risk estimation 
 
 #### WEPPcloud
 
-Delineates and builds 7778 soils and managements with available data. The soils and landuse are parameterized directly from available datasets. 
+Run WEPP anywhere in the continental U.S.
+
+Elevation data is from the USGS National Elevation Set. This interface uses TOPAZ for watershed delineation. The soils are built using SURGO/STATSGO. Landcover is selected based on the USGS National Landcover dataset. Climates are generated from the CLIGEN database.
+
 
 #### WEPP-PEP (Post Fire Erosion Prediction)
 
