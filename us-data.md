@@ -33,7 +33,7 @@ Srivastava, A., Flanagan, D. C., Frankenberger, J. R., and Engel, B. A. Updated 
 
 PRISM Climate Group, Oregon State University, http://prism.oregonstate.edu, downloaded November 13, 2017
 
-Resolution
+Resolution 800 m x 800 m grid
 
 ### ORNL Daily Surface Weather and Climatological Summaries (DAYMET)
 
