@@ -31,7 +31,7 @@ Srivastava, A., Flanagan, D. C., Frankenberger, J. R., and Engel, B. A. Updated 
 
 ### Oregon State University PRISM 30-Year Normals
 
-https://prism.oregonstate.edu/normals/
+PRISM Climate Group, Oregon State University, http://prism.oregonstate.edu, downloaded November 13, 2017
 
 Resolution
 
