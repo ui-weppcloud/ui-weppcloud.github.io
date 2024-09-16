@@ -35,6 +35,7 @@ WEPPcloud relies on publically available databases to parameterize the necessary
 - [Conterminous United States](us-data.md)
 - [Europe](eu-data.md)
 - [Australia](au-data.md)
+- [Earth](earth-data.md)
 
 WEPPcloud has region specific data for some locations that are used to provide better calibration. These regions include:
 
