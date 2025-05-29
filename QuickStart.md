@@ -8,19 +8,18 @@ Modern browsers including Firefox, Chrome, Safari, and Edge should work with WEP
 
 ## User Accounts (Optional)
 
-WEPPcloud allows users to create and store model runs. Users can also create accounts to access "PowerUser" features or to find and collaborate on model runs with other users. By default, anonymous runs are always publicly available via the URL to the project. Be aware that any resources, such as soil burn severity maps, that are uploaded to the interface would be potentially publicly available. If logged in the created runs are private by default and are only available to the project owner and collaborators. Private runs can be made publicly available if collaborators wish to share them. It is suggested that the runs also be made "Read Only" to avoid having viewers accidentally alter the model results.
+WEPPcloud allows users to create and store model runs. Users can also create accounts to save runs and collaborate on model runs with other users. By default, anonymous runs are always publicly available via the URL to the project. Be aware that any resources, such as soil burn severity maps, that are uploaded to the interface would be potentially publicly available. If logged in the created runs are private by default and are only available to the project owner and collaborators. Private runs can be made publicly available if collaborators wish to share them. It is suggested that the runs also be made "Read Only" to avoid having viewers accidentally alter the model results.
 
 User accounts can be created here:
-[https://wepp1.nkn.uidaho.edu/weppcloud/register](https://wepp1.nkn.uidaho.edu/weppcloud/register)
+[https://wepp.cloud/weppcloud/register](https://wepp.cloud/weppcloud/register)
 
 GPDR: We ask for your first and last name to provide polite coorespondances. Your email is used as a unique indentifier for your account. None of your personal identifiable information is shared with third-parties. 
 
 
 ## Creating a Project
 
-WEPPcloud projects are also referred to as runs, as in _model runs_. To start a project click on the "Start WEPPcloud Run" button.
-![Start WEPPcloud Run](https://user-images.githubusercontent.com/3652906/68882533-30c82080-06c4-11ea-8274-9fd3dd7c03d0.png)
-
+WEPPcloud projects are also referred to as runs, as in _model runs_. To start a project click on the "Start Disturbed Run (CONUS)" button.
+<img width="1184" alt="Start WEPPcloud Run" src="https://github.com/user-attachments/assets/c54b730b-f1dd-4e05-be5e-7cac6d4f9f4d" />
 This creates a new project folder on the server.
 
 
