@@ -45,6 +45,18 @@ When setting the extent it is important that the ridgeline of the catchment you 
 <img width="1428" alt="Map" src="https://github.com/user-attachments/assets/e837613f-c729-4a45-ab8f-dfb343dce87e" />
 
 
+## Optional SBS Upload
+
+A Soil Burn Severity Map can be uploaded. The SBS maps should be georeferenced .tif or .img files. They should have four thematic SBS classes: no burn, low, moderate, and high burn severity or be BARC 256 maps. The maps should have a single data band formatted as uint8 (byte) datatypes. Maps with color tables will use the table to identify SBS classes.
+
+<img width="1038" alt="Image" src="https://github.com/user-attachments/assets/23f74b86-5cb3-4c0d-84b4-fc63f95ee291" />
+
+Maps without color tables will allow the user to specify breaks to define the soil burn severity classes.
+
+<img width="1013" alt="Image" src="https://github.com/user-attachments/assets/ba82539f-c8d5-4981-948b-05acb34d19ef" />
+
+Limited support is provided for maps with float32 or float64 data if they contain integer values. If non-integer values are identified the SBS Upload will intentionally Error to reject the map.
+
 ### TOPAZ
 
 WEPPCloud uses TOPAZ to parameterize topographic data from DEMs to create hillslope profiles called sub-catchments for each watershed. TOPAZ delineates a channel network from the DEM based on the steepest downslope path from each raster cell (pixel) from the 8 cells surrounding it (Garbrecht and Martz 1997). Adjustments can be made to the detail of the channel network by changing values of Mean Source Channel Length (MSCL) and Critical Source Area (CSA). The MSCL is the shortest length that any channel is allowed to be. The CSA defines the minimum drainage area below which a permanent channel forms (Garbrecht and Martz 1997). Setting these to low values will increase the density of channels, which is useful when defining small watersheds. From the defined channel network, the user specifies the exact watershed outlet and TOPAZ generates the sub-catchments that delineate the watershed. Each sub-catchment represents the direct contributing area for each side of the drainage (Garbrecht and Martz 1997) and has homogeneous slope and aspect (Renschler 2002).
@@ -58,11 +70,19 @@ WEPPCloud uses TOPAZ to parameterize topographic data from DEMs to create hillsl
 <dd>The minimum drainage area below which a permanent channel forms. The default value is set to 10 ha.</dd>
 </dl>
 
+<img width="682" alt="Channel Delineation Control" src="https://github.com/user-attachments/assets/13a2c3dc-dcb9-464e-bf3f-e97f1369f88b" />
 
 ### Repeatable Delineation
 
 The watershed will delineate differently if the map extent, TOPAZ parameters, or outlet location are changed. To get the same watershed to delineate you can manually set the center location of the map and zoom level as well as specify the longitude and latitude of the outlet. The map size (in pixels) is also dependent on the window size of the browser and the browser zoom. So to repeatably delineate a watershed all of these should be the same. For comparing between scenarios it is recommended to fork projects or use the Omni Scenario Runner functionality to maintain delineation between comparisons.
 
+
+## Outlet
+
+The outlet for the watershed can be defined by pressing "Use Cursor" and using the map to select the watershed outlet location. WEPPcloud will identify the nearest channel, place a marker on the map, and report the outlet location in the Outlet control.
+User's can also specify the outlet using coordinates.
+
+<img width="1017" alt="Image" src="https://github.com/user-attachments/assets/4d7f4e5a-6099-420a-85de-dcb491a3ae34" />
 
 ## Subcatchment Delineation
 
@@ -70,6 +90,13 @@ Subcatchments whether delineated by TOPAZ or TauDEM will always have a TOPAZ Ide
 
 The WEPP structure file requires sequential numbering and hence the need for having both TOPAZ identifiers and WEPP identifiers.
 
+### Watershed Touches Boundary Error
+
+If the watershed extends beyond the extent of the map the Subcatchment Delineation will fail.
+
+<img width="999" alt="Watershed Touches Boundary Error" src="https://github.com/user-attachments/assets/8c1e142d-24e9-4ab7-8c90-efde5b9bb6ab" />
+
+In this case the map extent/zoom should be adjusted so that the entire watershed is within the map. Channels and outlet must be re-done before attempting the subcatchment delineation.
 
 ## Managements
 
