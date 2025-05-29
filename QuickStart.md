@@ -100,7 +100,7 @@ In this case the map extent/zoom should be adjusted so that the entire watershed
 
 ## Managements
 
-Readily available managements for WEPP use are provided in the drop-down menu. First, the interface determines the dominant landuse for each hillslope based on 2011 National Land Cover Data (NLCD) map. Then readily available managements are assigned to land uses. User might want to refine managements for better representation of croplands and forestland practices. 
+Readily available managements for WEPP use are provided in the drop-down menu. The interface contains NLCD maps from 1985 - 2023. For SBS scenarios it is recommended to select the year prior to the fire. In some cases user's might want to refine managements for better representation of croplands and forestland practices. No Data and Water classes should be reassigned.
 
 Note: The current interface does not have the capability to build/edit managements for simplicity purpose. Future versions will include include this capability.
 
@@ -121,6 +121,12 @@ Some interfaces allow the user to apply treatments through the map at the top of
 
 The landuses can be viewed on the map by selecting the "Dominant Landcover" layer on the layer tab to the right of the map.
 ![Viewing Landuses](https://user-images.githubusercontent.com/3652906/70351880-bdc34d00-181e-11ea-98d6-0adadd9e153d.png)
+
+
+Users can also supply their own landcover maps by selecting the "Upload Landcover Map" radio and using the file selection. The maps should be single band .tif maps with classes from the landuse map file. The disturbed9002 interface uses this landuse mapping file.
+
+(`Disturbed.json` Landuse Map)[https://github.com/rogerlew/wepppy/blob/master/wepppy/wepp/management/data/disturbed.json]
+
 
 ## Soils
 
