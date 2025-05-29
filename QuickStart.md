@@ -162,30 +162,31 @@ The selection control lists the 10 best matching stations in descending order. A
 ![Station Selection](https://user-images.githubusercontent.com/3652906/70352793-cc126880-1820-11ea-9f4a-dacdf452dc4e.png)
 CLIGEN is a stochastic weather generator but also supports generating daily timeseries climate files if daily minimum and maximum temperatures and daily precipitations are available. CLIGEN also has the ability to produce single storm climate files **Please note that the WEPP outputs for Single Storm Events are different from the Continuous outputs and not all of post wepp functionality including WATAR**
 
-### Stochastic PRISM Modified
+### Climate Modes
+
+#### Stochastic PRISM Modified
 
 Modifies a station parameter file with monthly precipitation, minimum and maximum daily temperatures. 800m grid. After modifing the station parameter file CLIGEN is used to generate a daily timeseries of weather events. Recommended for BAER analysis not requiring historical comparisons.
 
-### “Vanilla” CLIGEN (Stochastic weather generation). 
+#### “Vanilla” CLIGEN (Stochastic weather generation). 
 
 The daily climate is generated using the CLIGEN (CLImate GENerator) and the nearest parameter (.PAR) file. Values in .PAR files includes monthly statistical values derived using the NCDC-NOAA weather stations from 1974 through 2013. For interntional locations this may be the only option that is functional.
 
-### Observed DAYMET (GRIDMET wind) 
+#### Observed DAYMET (GRIDMET wind) 
 
 Utilizes daily precipitation, minimum and maximum temperature, dewpoint, and solar radiation from DAYMET and daily wind speed and velocity from GRIDMET. DAYMET 1km, GRIDMET 4km. Recommended for historical analysis. Storm parameters (duration, time to peak) are generated from CLIGEN and may not be accurate to historic events.
 
 
-### Observed GRIDMET
+#### Observed GRIDMET
 
 Daily observed precipitation, maximum and minimum temperatures, dewpoint, solar radiation, and wind are obtained from the data source. 4km grid. This dataset is available from 1980-present. Storm parameters (duration, time to peak) are generated from CLIGEN and may not be accurate to historic events.
 
 
-### Future (CMIP5) 
+#### Future (CMIP5) 
 
-Interpolated 4km spatial resolution daily observed precipitation, maximum and minimum temperatures are obtained from the data source. This dataset is available from 2006-2099. Other required weather inputs in the climate files are generated using nearest CLIGEN station.
+4km spatial resolution daily observed precipitation, maximum and minimum temperatures are obtained from the data source. This dataset is available from 2006-2099. Other required weather inputs in the climate files are generated using nearest CLIGEN station.
 
-
-### Single Storm 
+#### Single Storm 
 
 User-defined storm for event-wise simulation
 
@@ -200,6 +201,19 @@ User-defined storm for event-wise simulation
 <dd>Enter the peak rainfall intensity of the storm in inches per hour or millimeters per hour.</dd>
 </dl>
 
+### Climate Spatial Mdes
+
+#### Single Climate
+
+Applies the same climate file to all the hillslopes and watershed
+
+#### Multiple PRISM Revision
+
+Uses Interpolated PRISM monthly normals to adjust climates for each hillslope.
+
+#### Multiple Interpolated (Slow) 
+
+For observed DAYMET and GRIDMENT this option generates a daily interpolated climate for each hillslope.
 
 ## Watershed Preparation Report
 
@@ -215,7 +229,7 @@ WEPP is ran for each flowpath in the subcatchments. The plot files are used to p
 
 #### Slope definitions
 
-The flowpath slope definitions are constructed by watershed_abstraction routine in wepppy. For each cell in a hillslope a flowpath is constructed by walking down the slope identified by the slope grid from topaz. A distance array is constructed from the pixel coordinates and the slope points are truncated to 19 by linear interpolation if more than 19 points are defining the slope.
+The flowpath slope definitions are constructed by watershed_abstraction routine in wepppy. For each cell in a hillslope a flowpath is constructed by walking down the slope identified by the slope grid from topaz.
 
 #### Soils, Managements, and Climates
 
