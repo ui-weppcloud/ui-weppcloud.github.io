@@ -135,7 +135,6 @@ Users can also supply their own landcover maps by selecting the "Upload Landcove
 Three options are provided for determining soils.
 <dl>
 <dtDetermine by hillslope</dt>
-<dd>Automatically creates a soil file for each hillslope from the available soil database. (For WEPP-PEP only soil texture is used to identify the correct soil from the WEPP-PEP soil database.)</dd>
 <dt>Single Soil for watershed (MUKEY)</dt>
 <dd>Assign one soil for the entire watershed based on the SSURGO/STATSGO MUKEY.</dd>
 <dt>Single Soil for Watershed (Database)</dt>
@@ -144,7 +143,9 @@ Three options are provided for determining soils.
 
 Most of the time WEPPcloud builds WEPP soil files (7778 format) parameterized from the USDA's SSURGO/STATSGO database (for US Locale; not with WEPP-PEP or RRED). After building a summary table is provided for reviewing the soils within the catchment. The soils file names are taken from the SSURGO/STATSGO MUKEYs.
 
-![Soil Building](https://user-images.githubusercontent.com/3652906/70351636-3970ca00-181e-11ea-99af-70b06c790c54.png)
+The soil building also applies parameters from the (un)disturbed land soil lookup.
+
+<img width="1007" alt="Soil Building" src="https://github.com/user-attachments/assets/6f260bc0-9491-48e9-886a-8fb94cbb46f6" />
 
 ## Climate
 
@@ -152,7 +153,7 @@ The climate input processing relies heavily on CLIGEN.
 
 WEPP uses CLIGEN climate files as input. CLIGEN is a climate generator capable of generating stochastic daily climates, single storm events, or observed climates from daily temperature minimum, maximum, and precipitation series. 
 
-CLIGEN uses station parameter or (.par) files. We use the NSERL CLIGEN database of weather stations with monthly parameters for US Locales and a GHCN based database has global coverage for Europe and Australia.  The first step in building a climate is to select a weather station as a basis for the climate files. The recommended method to select a climate station is to select the "Multi-Factor Ranking (Considers Distance, Elevation, and Climate)" radio button. Once selected, WEPPcloud evaluates 2400+ stations to find the best match based on distance, elevation, and monthly climate values from PRISM. After a few seconds the best match should appear in the selection dialog, and summary climate statistics should appear below the selected station.
+CLIGEN uses station parameter or (.par) files. We use the 2016 NSERL CLIGEN database of weather stations with monthly parameters for US Locales and a GHCN based database has global coverage for Europe and Australia.  The first step in building a climate is to select a weather station as a basis for the climate files. The recommended method to select a climate station is to select the "Multi-Factor Ranking (Considers Distance, Elevation, and Climate)" radio button. Once selected, WEPPcloud evaluates 2400+ stations to find the best match based on distance, elevation, and monthly climate values from PRISM. After a few seconds the best match should appear in the selection dialog, and summary climate statistics should appear below the selected station.
 
 ![Climate Station Selection](https://user-images.githubusercontent.com/3652906/70352648-7342d000-1820-11ea-8650-4189042ec4bd.png)
 
@@ -161,35 +162,27 @@ The selection control lists the 10 best matching stations in descending order. A
 ![Station Selection](https://user-images.githubusercontent.com/3652906/70352793-cc126880-1820-11ea-9f4a-dacdf452dc4e.png)
 CLIGEN is a stochastic weather generator but also supports generating daily timeseries climate files if daily minimum and maximum temperatures and daily precipitations are available. CLIGEN also has the ability to produce single storm climate files **Please note that the WEPP outputs for Single Storm Events are different from the Continuous outputs and not all of post wepp functionality including WATAR**
 
+### Stochastic PRISM Modified
+
+Modifies a station parameter file with monthly precipitation, minimum and maximum daily temperatures. 800m grid. After modifing the station parameter file CLIGEN is used to generate a daily timeseries of weather events. Recommended for BAER analysis not requiring historical comparisons.
 
 ### “Vanilla” CLIGEN (Stochastic weather generation). 
 
-The daily climate is generated using the CLIGEN (CLImate GENerator) and the nearest parameter (.PAR) file. Values in .PAR files includes monthly statistical values derived using the NCDC-NOAA weather stations from 1974 through 2013.
+The daily climate is generated using the CLIGEN (CLImate GENerator) and the nearest parameter (.PAR) file. Values in .PAR files includes monthly statistical values derived using the NCDC-NOAA weather stations from 1974 through 2013. For interntional locations this may be the only option that is functional.
+
+### Observed DAYMET (GRIDMET wind) 
+
+Utilizes daily precipitation, minimum and maximum temperature, dewpoint, and solar radiation from DAYMET and daily wind speed and velocity from GRIDMET. DAYMET 1km, GRIDMET 4km. Recommended for historical analysis. Storm parameters (duration, time to peak) are generated from CLIGEN and may not be accurate to historic events.
 
 
-###	PRISM Modified 
+### Observed GRIDMET
 
-Monthly values of precipitation, maximum and minimum, wet/dry days in “Vanilla” CLIGEN .PAR file is replaced with PRISM normal covering the period 1981-2010
-
-
-### Observed (DAYMET)
-
-Interpolated 1-km spatial resolution daily observed precipitation, maximum and minimum temperatures are obtained from the data source. This dataset is available from 1980-2016. Other required weather inputs in the climate files are generated using nearest CLIGEN station.
-
-
-###	Observed (DAYMET) with PRISM Revision 
-
-Interpolated 1-km spatial resolution daily observed precipitation, maximum and minimum temperatures are obtained from the data source. This dataset is available from 1980-present. Other required weather inputs in the climate files are generated using nearest CLIGEN station.
-
-
-### Observed (GRIDMET) with PRISM Revision
-
-Interpolated 4-km spatial resolution daily observed precipitation, maximum and minimum temperatures are obtained from the data source. This dataset is available from 1980-present. Other required weather inputs in the climate files are generated using nearest CLIGEN station.
+Daily observed precipitation, maximum and minimum temperatures, dewpoint, solar radiation, and wind are obtained from the data source. 4km grid. This dataset is available from 1980-present. Storm parameters (duration, time to peak) are generated from CLIGEN and may not be accurate to historic events.
 
 
 ### Future (CMIP5) 
 
-Interpolated 4-km spatial resolution daily observed precipitation, maximum and minimum temperatures are obtained from the data source. This dataset is available from 2006-2099. Other required weather inputs in the climate files are generated using nearest CLIGEN station.
+Interpolated 4km spatial resolution daily observed precipitation, maximum and minimum temperatures are obtained from the data source. This dataset is available from 2006-2099. Other required weather inputs in the climate files are generated using nearest CLIGEN station.
 
 
 ### Single Storm 
