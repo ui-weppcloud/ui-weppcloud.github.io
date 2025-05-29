@@ -25,12 +25,11 @@ This creates a new project folder on the server.
 
 ### RunID and Interface Config
 
-The newly created project has a unique RunID, underlined in red. This RunID is unique for every project and can be used to return to the project as well as for debugging purposes. In the cloud a project folder is created with this RunID.
+The newly created project has a unique RunID, underlined in red. This RunID is unique for every project and can be used to return to the project as well as for debugging purposes. In the cloud a project folder is created with this RunID. The run ids are generated using a package called "Awesome-Codenames" and has a dictionary of 26,000 words. The codenames are used to produce ids that are memorable and easily transcribable.
 
-A large array of functionality is provided by WEPPcloud through the use of interface configurations. Each interface has a configuration file ("config file") that can specify specific boundaries for the interface as well as specific datasets and processing for the interface. The config is specified after the RunID in the URL. In the image below it is underlined in blue. The "0" config is for the US (Most of the config names are more meaningful).
+A large array of functionality is provided by WEPPcloud through the use of interface configurations. Each interface has a configuration file ("config file") that specifies datasets and parameters for specific locations or models. The config is specified after the RunID in the URL. In the image below it is underlined in blue. The "disturbed9002" config is for the US.
 
-![RunID and Interface Config](https://user-images.githubusercontent.com/3652906/68883157-4ee25080-06c5-11ea-9b69-66f314c5a7ed.png)
-
+<img width="771" alt="RunID and Interface Config" src="https://github.com/user-attachments/assets/e7d8786b-9da5-4edf-8d1d-7fb36957a0a6" />
 
 ## Selecting Map Extent
 
