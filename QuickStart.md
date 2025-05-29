@@ -231,6 +231,10 @@ WEPP is ran for each flowpath in the subcatchments. The plot files are used to p
 
 The flowpath slope definitions are constructed by watershed_abstraction routine in wepppy. For each cell in a hillslope a flowpath is constructed by walking down the slope identified by the slope grid from topaz.
 
+#### Clip Hillslopes
+
+WEPP can overpredict erosion with long hillslopes. Clipping will restrict the length and maintain area by increasing the width of the hillslope.
+
 #### Soils, Managements, and Climates
 
 Flowpath runs use the soil, management, and climate of their parent hillslope.
@@ -330,10 +334,6 @@ The Average Annual Report provides major water balance components of each hillsl
 
 This figure shows the contribution of daily runoff, subsurface lateral flow, and baseflow to streamflow averaged over hillslopes in a watershed.
 
-
-### Observed Data Model Fit 
-
-TODO @roger_lew
 
 ## Export Functionality
 
