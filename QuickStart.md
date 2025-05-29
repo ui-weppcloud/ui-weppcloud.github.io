@@ -42,24 +42,26 @@ The channel delineation is limited in the size of catchment areas that can be de
 
 When setting the extent it is important that the ridgeline of the catchment you wish to model is within the boundary of the map. TOPAZ will fail if the catchment falls outside of the map when delineating subcatchments.
 
-![Map](https://user-images.githubusercontent.com/3652906/68883858-b77dfd00-06c6-11ea-8630-1c34b6da480a.png)
+<img width="1428" alt="Map" src="https://github.com/user-attachments/assets/e837613f-c729-4a45-ab8f-dfb343dce87e" />
 
 
 ### TOPAZ
 
 WEPPCloud uses TOPAZ to parameterize topographic data from DEMs to create hillslope profiles called sub-catchments for each watershed. TOPAZ delineates a channel network from the DEM based on the steepest downslope path from each raster cell (pixel) from the 8 cells surrounding it (Garbrecht and Martz 1997). Adjustments can be made to the detail of the channel network by changing values of Mean Source Channel Length (MSCL) and Critical Source Area (CSA). The MSCL is the shortest length that any channel is allowed to be. The CSA defines the minimum drainage area below which a permanent channel forms (Garbrecht and Martz 1997). Setting these to low values will increase the density of channels, which is useful when defining small watersheds. From the defined channel network, the user specifies the exact watershed outlet and TOPAZ generates the sub-catchments that delineate the watershed. Each sub-catchment represents the direct contributing area for each side of the drainage (Garbrecht and Martz 1997) and has homogeneous slope and aspect (Renschler 2002).
 
+**It is highly recommended to not exceed an MSCL of 100m and a CSA of 10 ha**
+
 <dl>
 <dt>Minimum Source Channel Length (MSCL)</dt>
-<dd>The shortest length that any channel is allowed to be. The default value is set to 60 m, which means that atleast two 30-m DEM pixel is needed to initiate the headwater channel.</dd>
+<dd>The shortest length that any channel is allowed to be. The default value is set to 100 m, which means that atleast three 30-m DEM pixel is needed to initiate the headwater channel.</dd>
 <dt>Critical Source Area (CSA)</dt>
-<dd>The minimum drainage area below which a permanent channel forms. The default value is set to 4 ha.</dd>
+<dd>The minimum drainage area below which a permanent channel forms. The default value is set to 10 ha.</dd>
 </dl>
 
 
 ### Repeatable Delineation
 
-The watershed will delineate differently if the map extent, TOPAZ parameters, or outlet location are changed. To get the same watershed to delineate you can manually set the center location of the map and zoom level as well as specify the longitude and latitude of the outlet.
+The watershed will delineate differently if the map extent, TOPAZ parameters, or outlet location are changed. To get the same watershed to delineate you can manually set the center location of the map and zoom level as well as specify the longitude and latitude of the outlet. The map size (in pixels) is also dependent on the window size of the browser and the browser zoom. So to repeatably delineate a watershed all of these should be the same. For comparing between scenarios it is recommended to fork projects or use the Omni Scenario Runner functionality to maintain delineation between comparisons.
 
 
 ## Subcatchment Delineation
