@@ -10,7 +10,7 @@ The disturbed land soil table in WEPPcloud contains parameters that define soil 
 | stext       | Soil texture (clay loam, loam, sand loam, silt loam)              | -         |          |
 | ki          | Interrill erodibility                                            | kg·s/m⁴   |          |
 | kr          | Rill erodibility                                                 | s/m       |          |
-| shcrit      | Critical shear stress                                            | Pa        |          |
+| shcrit      | Critical shear stress (τc)                                          | N/m² or Pa   |          |
 | avke        | Effective hydraulic conductivity                                 | mm/h      |  |
 | ksflag      | Flag to use internal hydraulic conductivity adjustments (0: no, 1: yes) | {0,1} |          |
 | ksatadj     | Adjustment factor for saturated hydraulic conductivity            | -         |          |
@@ -32,6 +32,34 @@ The disturbed land soil table in WEPPcloud contains parameters that define soil 
 Determined from field data. Do not change unless you have a good reason.
 
 Values for disturbed/undisturbed may be less significant west of the Cascades (e.g., in Oregon)
+
+#### Interrill erodibility (Ki)
+Interrill areas are the sheet flow zones between small channels (rills) on a hillslope.
+Interrill-erodibility measures the soil's susceptibility to detachment by raindrop impact and shallow sheet flow.
+It's influenced by: 
+Soil texture
+Surface cover (e.g., vegetation, mulch)
+Soil structure and cohesion
+Units: kg·s/m⁴
+Do not change
+
+
+#### Rill erodibility (Kr)
+Rills are small channels formed by concentrated flow on hillslopes.
+Rill-erodibility is the soil’s susceptibility to detachment by concentrated flow (not raindrop impact). 
+Rill erosion is generally more intense on steeper and/or longer slopes and can cause greater sediment transport than interrill erosion.
+Units: s/m
+Do not change*
+*_In West Cascades divide by 10 or 100_
+
+
+#### Critical Shear Stress (τc)
+This is the minimum hydraulic shear stress required to initiate detachment of soil particles in rills.
+Below this threshold, the flow is not energetic enough to detach soil.
+It acts as a resistance parameter in rill erosion models.
+Units: N/m² or Pa
+Do not change
+
 
 #### Basal crop coefficient (pmet_kcb)
 
@@ -80,4 +108,4 @@ Use:
 Can be determined from observed streamflow data; slope of streamflow during recession days
 
 
- 
+
