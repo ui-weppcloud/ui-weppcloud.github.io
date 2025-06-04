@@ -32,7 +32,6 @@ The disturbed land soil table in WEPPcloud contains parameters that define soil 
 
 Determined from field data. Do not change unless you have a good reason.
 
-Values for disturbed/undisturbed may be less significant west of the Cascades (e.g., in Oregon).
 
 ### Interrill Erodibility (ki)
 
@@ -50,7 +49,7 @@ Interrill areas are the sheet flow zones between small channels (rills) on a hil
 Rills are small channels formed by concentrated flow on hillslopes. Rill erodibility is the soil’s susceptibility to detachment by concentrated flow (not raindrop impact). Rill erosion is generally more intense on steeper and/or longer slopes and can cause greater sediment transport than interrill erosion.
 
 **Units**: s/m  
-**Note**: Do not change. In West Cascades, divide by 10 or 100.
+**Note**: Do not change.
 
 ### Critical Shear Stress (τc)
 
@@ -66,9 +65,6 @@ The Kcb parameter for the FAO Penman-Monteith equation approximates net evapotra
 **Units**: None  
 **Guidelines**:
 - For forests, use default: 0.95 (well-watered conditions).
-- For undisturbed conditions:
-  - Use 1.2 to increase ET (decrease annual water yield; well-watered conditions).
-  - Use 0.65 to reduce ET (increase annual water yield; during drought conditions).
 - No need to modify for disturbed conditions, as the reduction in ET is accounted for by a reduction in LAI within the model.
 
 For more information, see: [Crop evapotranspiration - Guidelines for computing crop water requirements - FAO Irrigation and drainage paper 56, Chapter 7 - ETc - Dual crop coefficient (Kc = Kcb + Ke)](https://www.fao.org/4/x0490e/x0490e0c.htm#chapter%207%20%20%20etc%20%20%20dual%20crop%20coefficient%20(kc%20=%20kcb%20+%20ke))
@@ -79,10 +75,6 @@ Found under WEPP Advanced Options - Snow.
 
 **Units**: °C  
 **Range**: -3 to 1  
-**Guidelines**:
-- Use 0 for CLIGEN.
-- Use 0 for DAYMET.
-- Use -2 for GRIDMET.
 
 ### Underlying Bedrock Conductivity (ksat for restrictive layer - kslast)
 
@@ -91,9 +83,6 @@ Found under WEPP Advanced Options - Bedrock
 **Units**: mm/h  
 **Default**: Based on SSURGO values (ksat of the last horizon / 100, or other rules).  
 **Range**: 0.001–0.1  
-**Guidelines**:
-- Use 0.001 to restrict flow to baseflow (more lateral flow and runoff).
-- Use 0.1 to allow flow to baseflow (less lateral flow and runoff).
 
 ### Baseflow Coefficient
 
@@ -101,11 +90,6 @@ Found under WEPP Advanced Options - Baseflow Processing.
 
 **Units**: per day  
 **Range**: 0.01–0.04  
-**Guidelines**:
-- 0.01 = longer recession (100 days).
-- 0.04 = shorter recession (25 days).
-- Suggested values: 0.02, 0.03, or 0.04.
-- Can be determined from observed streamflow data; slope of streamflow during recession days.
 
 ### Channel Critical Shear Stress (τc)
 
@@ -116,9 +100,3 @@ Found under WEPP Advanced Options - Channel Parameters
 **Guidelines**:
 - This is the minimum shear stress required to initiate the movement of sediment particles on the bed of a channel (such as a river, stream, or canal). 
 - In simple terms, it's the threshold force per unit area that water flow must exert on the channel bed to start erosion or sediment transport.
-**Examples**:
-- Lake Tahoe: 10−180
-- Oregon (near Portland)/Washington (near Seattle): 83
-- North Idaho (Mika Creek): 35−40
-- Oregon (near Eugene): 70
-  
