@@ -1,4 +1,4 @@
-# DRAFT Document WEPPcloud Calibration 
+# WEPPcloud Calibration 
 
 
 ## Disturbed Land Soil Lookup Table (PowerUser Panel → Modify Disturbed Parameters)
