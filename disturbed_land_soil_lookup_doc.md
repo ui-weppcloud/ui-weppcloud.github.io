@@ -11,12 +11,12 @@ The disturbed land soil table in WEPPcloud contains parameters that define soil 
 | ki          | Interrill erodibility                                            | kg·s/m⁴   |          |
 | kr          | Rill erodibility                                                 | s/m       |          |
 | shcrit      | Critical shear stress                                            | Pa        |          |
-| avke        | Effective hydraulic conductivity                                 | mm/h      | Determined from field data. Do not change unless you have a good region. |
+| avke        | Effective hydraulic conductivity                                 | mm/h      |  |
 | ksflag      | Flag to use internal hydraulic conductivity adjustments (0: no, 1: yes) | {0,1} |          |
 | ksatadj     | Adjustment factor for saturated hydraulic conductivity            | -         |          |
 | ksatfac     | ignore - will be removed                                          | -         |          |
 | ksatrec     | ignore - will be removed                                          | -         |          |
-| pmet_kcb    | Basal crop coefficient (Kcb)                                     | ratio     |          |
+| pmet_kcb    | Basal crop coefficient (Kcb)                                     | -          |
 | pmet_rawp   | Parameter for readily available water                            | -         |          |
 | rdmax       | Maximum root depth                                               | m         |          |
 | xmxlai      | Maximum leaf area index                                          | frac      |          |
@@ -25,7 +25,27 @@ The disturbed land soil table in WEPPcloud contains parameters that define soil 
 
 
 
-## Other Calbration Parameters of Interest
+## Additional Notes and Other Parameters of Interest
+
+#### Effective hydraulic conductivity (avke)
+
+Determined from field data. Do not change unless you have a good reason.
+
+Values for disturbed/undisturbed may be less significant west of the Cascades (e.g., in Oregon)
+
+#### Basal crop coefficient (pmet_kcb)
+
+KCB parameter for FAO Penman-Monteith equation approximates net evapotranspiration from meteorological data as a replacement for direct measurement of evapotranspiration.
+
+Units: NA
+For forests use default: 0.95 (default; well-watered conditions)
+Use mainly for undisturbed conditions: 
+1.2 to increase ET (decrease annual water yield; well-watered conditions)
+0.65 to reduce ET (increase annual water yield; during drought conditions) 
+No need to modify for disturbed conditions, as the reduction in ET is accounted for by a reduction in LAI within the model.
+
+For more information see: [Crop evapotranspiration - Guidelines for computing crop water requirements - FAO Irrigation and drainage paper 56, Chapter 7 - ETc - Dual crop coefficient (Kc = Kcb + Ke)](https://www.fao.org/4/x0490e/x0490e0c.htm#chapter%207%20%20%20etc%20%20%20dual%20crop%20coefficient%20(kc%20=%20kcb%20+%20ke))
+
 
 #### Rain-snow temperature threshold
 
