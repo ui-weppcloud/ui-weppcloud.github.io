@@ -1,8 +1,10 @@
-# Disturbed Land Soil Table Parameters for WEPPcloud
+# WEPPcloud Calibration 
 
+
+## Disturbed Land Soil Lookup Table (PowerUser Panel → Modify Disturbed Parameters)
 The disturbed land soil table in WEPPcloud contains parameters that define soil properties for various land use categories and soil textures. These parameters are essential for modeling erosion and hydrology in disturbed lands using the WEPP (Water Erosion Prediction Project) model. The table includes data for combinations of land use (e.g., agriculture crops, forest, bare) and soil texture (clay loam, loam, sand loam, silt loam).
 
-## Table of Parameters
+### Table of Parameters
 
 | Parameter     | Description                                                              | Units        |
 |---------------|--------------------------------------------------------------------------|--------------|
@@ -72,7 +74,7 @@ For more information, see: [Crop evapotranspiration - Guidelines for computing c
 
 ### Rain-Snow Temperature Threshold
 
-Found under WEPP Advanced Options.
+Found under WEPP Advanced Options - Snow.
 
 **Units**: °C  
 **Range**: -3 to 1  
@@ -81,7 +83,9 @@ Found under WEPP Advanced Options.
 - Use 0 for DAYMET.
 - Use -2 for GRIDMET.
 
-### Underlying Bedrock Conductivity
+### Underlying Bedrock Conductivity (ksat for restrictive layer - kslast)
+
+Found under WEPP Advanced Options - Bedrock
 
 **Units**: mm/h  
 **Default**: Based on SSURGO values (ksat of the last horizon / 100, or other rules).  
@@ -92,6 +96,8 @@ Found under WEPP Advanced Options.
 
 ### Baseflow Coefficient
 
+Found under WEPP Advanced Options - Baseflow Processing.
+
 **Units**: per day  
 **Range**: 0.01–0.04  
 **Guidelines**:
@@ -99,3 +105,19 @@ Found under WEPP Advanced Options.
 - 0.04 = shorter recession (25 days).
 - Suggested values: 0.02, 0.03, or 0.04.
 - Can be determined from observed streamflow data; slope of streamflow during recession days.
+
+### Channel Critical Shear Stress (τc)
+
+Found under WEPP Advanced Options - Channel Parameters
+
+**Units**: N/m² or Pa
+**Range**: 0.05 (fine silt) and 170 coarse cobble
+**Guidelines**:
+- This is the minimum shear stress required to initiate the movement of sediment particles on the bed of a channel (such as a river, stream, or canal). 
+- In simple terms, it's the threshold force per unit area that water flow must exert on the channel bed to start erosion or sediment transport.
+**Examples**:
+- Lake Tahoe: 10−180
+- Oregon (near Portland)/Washington (near Seattle): 83
+- North Idaho (Mika Creek): 35−40
+- Oregon (near Eugene): 70
+  
