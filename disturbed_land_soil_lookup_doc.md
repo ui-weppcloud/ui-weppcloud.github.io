@@ -14,8 +14,8 @@ The disturbed land soil table in WEPPcloud contains parameters that define soil 
 | avke        | Effective hydraulic conductivity                                 | mm/h      |
 | ksflag      | Flag to use internal hydraulic conductivity adjustments (0: no, 1: yes) | {0,1} |
 | ksatadj     | Adjustment factor for saturated hydraulic conductivity            | -         |
-| ksatfac     | Factor for saturated hydraulic conductivity                      | -         |
-| ksatrec     | Recovery factor for saturated hydraulic conductivity             | -         |
+| ksatfac     | ignore - will be removed                                          | -         |
+| ksatrec     | ignore - will be removed                                          | -         |
 | pmet_kcb    | Basal crop coefficient (Kcb)                                     | ratio     |
 | pmet_rawp   | Parameter for readily available water                            | -         |
 | rdmax       | Maximum root depth                                               | m         |
