@@ -52,16 +52,10 @@ The WEPPcloud-Disturbed allows users to upload a burn severity map and predict e
 
 This interface also incorporates the Wildfire Ash Transport And Risk estimation tool (WATAR).
 
-### Legacy Interfaces
-
-#### UnDisturbed
-The WEPPcloud-Disturbed allows users to upload a burn severity map and predict erosion based on fire severity. 
-
-Optionally, the user can forgo uploading a burn severity map to model unburned conditions. It uses SSURGO to create 9002 soils and NLCD to parameterize landuse for unburned conditions. For fire and treatment conditions soils and managements are procedurally generated and parameterized from the disturbed database based on soil texture and landuse. This allowing forests, shrubs, and grass to be burned based on landuse. The parameterization is intended to provide meaningful comparisons between unburned, burned, and treatment conditions. In the long-term disturbed is envisioned to replace the WEPPcloud-PEP interface.
-This interface also incorporates the Wildfire Ash Transport And Risk estimation tool (WATAR).
-
 [Guidance on Disturbed Parameterization](disturbed_land_soil_lookup_doc.md)
 
+
+### Legacy Interfaces
 
 #### Legacy WEPPcloud
 Run WEPP anywhere in the continental U.S.
