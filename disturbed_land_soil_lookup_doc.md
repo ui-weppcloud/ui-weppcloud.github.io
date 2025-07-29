@@ -5,25 +5,27 @@
 
 The disturbed land soil table in WEPPcloud contains parameters that define soil properties for various land use categories and soil textures. These parameters are essential for modeling erosion and hydrology in disturbed lands using the WEPP (Water Erosion Prediction Project) model. The table includes data for combinations of land use (e.g., agriculture crops, forest, bare) and soil texture (clay loam, loam, sand loam, silt loam).
 
+Each project has its own disturbed land-soil-lookup table that can be modified through the PowerUser Panel
+
 ### Table of Parameters
 
 | Parameter     | Description                                                              | Units        |
 |---------------|--------------------------------------------------------------------------|--------------|
 | luse          | Land use category (disturbed class from the land use map)                | -            |
 | stext         | Soil texture (clay loam, loam, sand loam, silt loam)                     | -            |
-| ki            | Interrill erodibility                                                   | kg·s/m⁴      |
-| kr            | Rill erodibility                                                        | s/m          |
+| ki            | Interrill erodibility                                                    | kg·s/m⁴      |
+| kr            | Rill erodibility                                                         | s/m          |
 | shcrit        | Critical shear stress (τc)                                               | N/m² or Pa   |
-| avke          | Effective hydraulic conductivity                                        | mm/h         |
-| ksflag        | Flag to use internal hydraulic conductivity adjustments (0: no, 1: yes) | {0,1}        |
+| avke          | Effective hydraulic conductivity                                         | mm/h         |
+| ksflag        | Flag to use internal hydraulic conductivity adjustments (0: no, 1: yes)  | {0,1}        |
 | ksatadj       | Adjustment factor for saturated hydraulic conductivity                   | -            |
 | ksatfac       | ignore - will be removed                                                 | -            |
 | ksatrec       | ignore - will be removed                                                 | -            |
 | pmet_kcb      | Basal crop coefficient (Kcb)                                             | -            |
-| pmet_rawp     | Parameter for readily available water                                   | -            |
-| rdmax         | Maximum root depth                                                      | m            |
-| xmxlai        | Maximum leaf area index                                                 | frac         |
-| keffflag      | Flag for lower limit of effective conductivity (lkeff; 0: no, 1: yes)   | {0,1}        |
+| pmet_rawp     | Parameter for readily available water                                    | -            |
+| rdmax         | Maximum root depth                                                       | m            |
+| xmxlai        | Maximum leaf area index                                                  | frac         |
+| keffflag      | Flag for lower limit of effective conductivity (lkeff; 0: no, 1: yes)    | {0,1}        |
 | lkeff         | Lower limit of effective conductivity (-9999 indicates no adjustment)    | mm/h         |
 
 ## Additional Notes and Other Parameters of Interest
@@ -100,3 +102,13 @@ Found under WEPP Advanced Options - Channel Parameters
 **Guidelines**:
 - This is the minimum shear stress required to initiate the movement of sediment particles on the bed of a channel (such as a river, stream, or canal). 
 - In simple terms, it's the threshold force per unit area that water flow must exert on the channel bed to start erosion or sediment transport.
+
+### ksatadj
+
+Specifies hydrophobicity adjustment
+
+**Units**: None
+**Guidelines**:
+- Currently, we set the hydrophobicity for high severity burn only. But it could be changed as desired. Note that in the model the hydrophobicity is by burn severity applied to all four soil textures of high severity.
+- The `ksatadj` value of "1" specifies hydrophobic soils. User's can then change the lower limit of hydraulic conductivity (`lkeff` parameter value), which would restrict the infiltration allowing more surface runoff.
+
