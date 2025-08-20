@@ -52,12 +52,14 @@ https://climate.northwestknowledge.net/RangelandForecast/download/Models.php
 
 ## Landuse
 
-### USGS National Land Cover Database (NLCD) 2016
+### USGS Annual National Land Cover Database (NLCD)
 
 https://www.usgs.gov/centers/eros/science/national-land-cover-database?qt-science_center_objects=0#qt-science_center_objects
 
-Default mapping from NLCD land cover to WEPP management:
-https://github.com/rogerlew/wepppy/blob/master/wepppy/wepp/management/data/map.json
+### Univerity of Idaho Ever Forest Annual National Landcover Database
+
+https://github.com/rogerlew/us-conus-nlcd-ever-forest/
+
 
 ### MRLC Shrubland
 
