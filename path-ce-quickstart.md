@@ -24,7 +24,6 @@ The user may enter a range of slope angles (in degrees) they wish PATH to consid
 
 ### Step 4. Run PATH Cost-Effective
 
-<img width="771" alt="RunID and Interface Config" src="https://github.com/user-attachments/assets/e7d8786b-9da5-4edf-8d1d-7fb36957a0a6" />
 
-
+### Output
 
