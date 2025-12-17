@@ -4,7 +4,7 @@ This tutorial walks the user through the steps necessary to successfully run PAT
 
 ### Pre-PATH Requirements
 
-Prior to running PATH the user must first successfully configure and run a WEPP scenario for the sub-catchment of the users choosing. Once run the user may proceed with configuring PATH.
+Prior to running PATH the user must first successfully configure and run a WEPP scenario for the sub-catchment of the users choosing. Once run the user may proceed configuring PATH.
 
 
 ## PATH Cost-Effective
