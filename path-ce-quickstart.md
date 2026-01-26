@@ -11,7 +11,7 @@ Prior to running PATH the user must first successfully configure and run a WEPP 
 
 ### Step 1. Define Biophysical Thresholds
 
-The PATH Cost-Effective model objective minimizes the cost of treatment while meeting the user defined sediment discharge and sediment yield thresholds. By inputing sediment discharge and sediment yield threshold values PATH will find the optimal hillslopes to treat that will meat these thresholds. (Ex. User inputs a sediment discharge threshold of 200 tons. Total sediment discharge after treatment of all hillslopes will be \leq 200 tons.) 
+The PATH Cost-Effective model objective minimizes the cost of treatment while meeting the user defined sediment discharge and sediment yield thresholds. By inputing sediment discharge and sediment yield threshold values PATH will find the optimal hillslopes to treat that will meat these thresholds. (Ex. User inputs a sediment discharge threshold of 200 tons. Total sediment discharge after treatment of all hillslopes will be $\leq$ 200 tons.) 
 
 ### Step 2. Configure Landscape Filters
 
